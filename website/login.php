@@ -1,11 +1,11 @@
 <?php
 session_start();
-$con = mysqli_connect("localhost", "root", "", "Book_Club");
+$con = mysqli_connect("localhost", "root", "", "book_blub");
 
-if (mysqli_connect_errno()) {
-    echo "Connection failed: " . mysqli_connect_error();
-    exit();
-}
+// if (mysqli_connect_error()) {
+//     echo "Connection failed: " . mysqli_connect_errno();
+//     exit();
+// }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $studentNumber = $_POST["studentNumber"];
