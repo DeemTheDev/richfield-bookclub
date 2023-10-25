@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con = mysqli_connect("localhost", "root", "", "book_blub");
+$con = new mysqli("localhost", "root", "", "book_club");
 
 // if (mysqli_connect_error()) {
 //     echo "Connection failed: " . mysqli_connect_errno();
