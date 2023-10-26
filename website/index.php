@@ -27,7 +27,6 @@
         <div class="current__time"></div>
         <div class="current__download"></div>
     </section>
-    <!--ALL BOOKS DISPLAYED HERE -->
     <section class="books">
         <?php
             for($i = 1; $i <= 3; $i++){
