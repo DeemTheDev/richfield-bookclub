@@ -48,10 +48,12 @@
         font-size: 15px;
         padding-right: -10px;
     }
-    .books__pdf div{
-        width: 60%;
+    .books__pdf{
+        width: 90%;
         display: grid;
-        grid-template-columns: 20% 20% 20% 20%;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-column: span 2;
+        
     }
 }
 
