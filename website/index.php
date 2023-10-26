@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Please include this CSS file in all pages.-->
     <link rel="stylesheet" href="css/responsive.css">
-    s
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/index.css">
     <title>Home</title>
 </head>

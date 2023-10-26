@@ -34,7 +34,7 @@ html{
 }
 .header__img{
     position: absolute;
-    top: -30px;
+    top: -60px;
     left: 0;
     width: 250px;
     height: 19vh;
@@ -73,13 +73,15 @@ html{
     background-color:#006494 ;
 }
 .books__pdf{
-    width: 90%;
+    width: 93%;
     margin-inline: 1.5rem;
     display:grid;
     gap: 1.5rem;
     grid-template-columns: 25% 25% 25% 25%;
+    
 }
-.books__img{
+
+.books__img embed{
     width: 100%;
     height: 30vh;
     background-color: #00a6fb;
@@ -87,18 +89,15 @@ html{
     
 }
 
-.books__button button{
-    position: absolute;
+.books__button a{
+    position: fixed;
     right: 0;
     bottom: 0;
-    padding: 50px;
-    width : 60px ;
-    height : 100px ;
  
         }
 .button{
 position: fixed;
-right: 20px;
+right: 50px;
 bottom: 60px;
 z-index : 1 ;
 width : 200px ;
@@ -106,6 +105,7 @@ height : 56px ;
 text-decoration : none ;
 font-size : 14px ; 
 font-weight : bold ;
-
+background-color: aliceblue;
+border-radius:10px;
 }
 
