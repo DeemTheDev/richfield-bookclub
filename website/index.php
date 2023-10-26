@@ -3,8 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Please include this CSS file in all pages.-->
-    <link rel="stylesheet" href="responsive.css">
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    s
     <link rel="stylesheet" href="css/index.css">
     <title>Home</title>
 </head>
@@ -41,17 +41,9 @@
                  echo "</div>";
         }
         ?>
-        <div class="bookdislplay">
-            
-        </div>
+        
         <div class="books__button">
-            <a href="#" class="button">
-                <div class="button__line"></div>
-                <div class="button__line"></div>
-                <span class="button__text">UPLOAD</span>
-                <div class="button__drow1"></div>
-                <div class="button__drow2"></div>
-            </a>
+            <a href="#"><button class="button">UPLOAD</button></a>
         </div>
     </section>
    </main>
