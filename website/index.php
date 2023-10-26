@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Please include this CSS file in all pages.-->
+    <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/index.css">
     <title>Home</title>
@@ -30,14 +31,19 @@
     <section class="books">
         <?php
             for($i = 1; $i <= 3; $i++){
-                echo "<div class='books__pdf'>
-                <div class='books__img'></div>
-                <div class='books__img'></div>
-                <div class='books__img'></div>
-                <div class='books__img'></div>
-            </div>";
+                echo "<div class='books__pdf'>";
+            for($z=1; $z <=4; $z++){
+                echo "<div class='books__img'>
+                <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>
+                <div class='books__download'><a href='books/Atomic-Habits-old.pdf'><button>DOWNLOAD</button></a></div>
+                </div>";
             }
+                 echo "</div>";
+        }
         ?>
+        <div class="bookdislplay">
+            
+        </div>
         <div class="books__button">
             <a href="#" class="button">
                 <div class="button__line"></div>
