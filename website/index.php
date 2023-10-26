@@ -27,8 +27,18 @@
         <div class="current__time"></div>
         <div class="current__download"></div>
     </section>
+    <!--ALL BOOKS DISPLAYED HERE -->
     <section class="books">
-
+        <?php
+            for($i = 1; $i <= 3; $i++){
+                echo "<div class='books__pdf'>
+                <div class='books__img'></div>
+                <div class='books__img'></div>
+                <div class='books__img'></div>
+                <div class='books__img'></div>
+            </div>";
+            }
+        ?>
         <div class="books__button">
             <a href="#" class="button">
                 <div class="button__line"></div>

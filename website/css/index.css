@@ -26,19 +26,18 @@ html{
 
 }
 .header__logo{
-    position: fixed;
+    position: absolute;
     left: 20;
     right: 0;
     align-items: center;
     list-style: none;
 }
 .header__img{
-    position: fixed;
-    top: -12;
+    position: absolute;
+    top: -30px;
     left: 0;
-
     width: 250px;
-    height: 20vh;
+    height: 19vh;
 }
 .header__logolink{
     text-decoration: none;
@@ -62,7 +61,7 @@ html{
 }
 .current{
     width: 100%;
-    height: 50vh;
+    height: 100%;
     background-color:#003554;
 }
 
@@ -70,10 +69,23 @@ html{
 
 .books{
     width: 100%;
-    height: 50vh;
+    height: auto;
     background-color:#006494 ;
 }
-
+.books__pdf{
+    width: 90%;
+    margin-inline: 1.5rem;
+    display:grid;
+    gap: 1.5rem;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.books__img{
+    width: 100%;
+    height: 30vh;
+    background-color: #00a6fb;
+    margin-top: 1.5rem;
+    
+}
 
 
 
@@ -148,7 +160,7 @@ html{
 
 
 .books__button{
-    position: fixed;
+    position: absolute;
     right: 0;
     bottom: 0;
     padding: 50px;
@@ -158,7 +170,7 @@ html{
         }
 :root{
 /* color type A */
---line_color : #00a6fb ;
+--line_color : #051923;
 --back_color : #FFECF6  ;
 
 /* color type B */
