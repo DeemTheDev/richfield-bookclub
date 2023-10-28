@@ -34,7 +34,7 @@
    <main class="container">
     <section class="current">
         <div class="current__book">
-            <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>
+            <embed src='books/Atomic-Habits-old.pdf' height='100%' width='100%'>
         </div>
         <div class="current__genre">
             <h1>Book Name: </h1>
@@ -48,13 +48,13 @@
         </div>
         <div class="current__download">
             <div class="current__button">
-                <button>DOWNLOAD</button>
+                <a><button>DOWNLOAD</button></a>
             </div>
         </div>
     </section>
     <section class="books">
         <?php
-            for($i = 1; $i <= 3; $i++){
+            for($i = 1; $i <= 4; $i++){
                 echo "<div class='books__pdf'>
                         <div class='books__img item1'>
                             <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>

@@ -90,21 +90,94 @@ html{
 .current__book{
     width: 25%;
     height: auto;
-
+    border: 2px solid #00a6fb;  
+}
+.current__book embed{
+    width: 100%;
+    height: 100%;
 }
 .current__genre{
     width: 25%;
     height: 30vh;
+    color: white;
+    border: 2px solid #00a6fb;  
+    
+}
+.current__genre h1{
+    position: relative;
+    top: 6vh;
 }
 .current__time{
     width: 25%;
     height: 30vh;
-    margin: 50 50;
+    border: 2px solid #00a6fb;  
+}
+.current__time .clock{
+    position: relative;
+    top: 45%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
 .current__download{
     width: 25%;
     height: 30vh;
+    border: 2px solid #00a6fb;  
 }
+.current__download button{
+    position: relative;
+    top: 30%;
+    left: 15%;
+    width: 70%;
+    height: 40%;
+    font-size : 2rem; 
+    font-weight : bold ;
+    color: white;
+    background-color: #70e000;
+    border-radius:10px;
+}
+
+/* ========== RESPONSIVENESS FOR CURRENT SECTIONS ========== */
+@media (max-width: 930px){
+    .current__genre h1{
+        font-size: 1rem;
+    }
+    
+    .current__time .clock{
+        font-size: 1rem;
+    }
+    
+    .current__download button{
+        font-size: 1rem;
+     
+}
+}
+
+@media (max-width: 400px){
+    
+    .current__download button{
+        top: 50%;
+        height: 20%;
+        font-size: 5px;
+     
+}
+}
+@media (max-width: 612px){
+    .current__genre h1{
+        font-size: .7rem;
+    }
+    
+    .current__time .clock{
+        font-size: .7rem;
+    }
+    
+    .current__download button{
+        height: 20%;
+        font-size: .7rem;
+     
+}
+}
+/* ========== RESPONSIVENESS FOR CURRENT SECTIONS ========== */
 .navbar__links li:hover{
     background-color: #00a6fb;
 }

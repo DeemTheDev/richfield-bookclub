@@ -1,9 +1,9 @@
 /*TARGET -> LARGE LAPTOP SCREEN*/
-@media (min-width: 1440px){
+/* @media (min-width: 1440px){
     .books__img embed{
-        height: 80%;
+        height: auto;
     }
-}
+} */
 
 /*TARGET -> TABLET SCREEN*/
 @media (max-width: 897px){
