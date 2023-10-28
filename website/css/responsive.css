@@ -7,18 +7,7 @@
 
 /*TARGET -> TABLET SCREEN*/
 @media (max-width: 897px){
-    .header__logo img{
-        width: 200px;
-        height: 15vh;
-        top: -55px;
-        left: -20px;
-    }
-    .header__logo a{
-        font-size: 24px;
-    }
-    .header__dropdown a{
-        font-size: 17;
-    }
+    
     .books__pdf div{
         width: 75%;
         grid-template-columns: 25% 25% 25% 25%;
@@ -51,20 +40,7 @@
         }
     
 }
-@media (max-width: 798px){
-    .header__logo img{
-        width: 150px;
-        height: 12vh;
-        top: -45px;
-        left: -12px;
-    }
-    .header__logo a{
-        font-size: 20px;
-    }
-    .header__menu a{
-        font-size: 15px;
-        padding-right: -10px;
-    }
+@media all and (max-width: 798px){
     
     .books__pdf div{
         width: 75%;
@@ -88,70 +64,21 @@
         grid-column-start: 3;
         grid-column-end: 5;
     }
-    .books__download button{
-        height: 1.5rem;
-        width: 100px;
-    }
-    .button button{
-        right: 30px;
-        bottom: 30px;
-        width : 200px ;
-        height : 56px ;
-        font-size : 14px ;
-        border-radius:10px;
-        }
-}
-
-@media (max-width: 550px){
-    .header__logo img{
-        width: 150px;
-        height: 12vh;
-        top: -45px;
-        left: -12px;
-    }
-    .header__logo a{
-        font-size: 20px;
-    }
-    .header__menu a{
-        font-size: 15px;
-        padding-right: -10px;
-    }
+   
     
-    .books__pdf div{
-        width: 75%;
-        grid-template-columns: 25% 25% 25% 25%;
-        gap: 0.5rem;
-
-    }
-    .item1{
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-    .item2{
-        grid-column-start: 3;
-        grid-column-end: 5;
-    }
-    .item3{
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-    .item4{
-        grid-column-start: 3;
-        grid-column-end: 5;
-    }
-    .books__download button{
-        height: 1.5rem;
-        width: 100px;
-    }
-    .button button{
-        right: 30px;
-        bottom: 30px;
-        width : 200px ;
-        height : 56px ;
-        font-size : 14px ;
-        border-radius:10px;
-        }
 }
+
+@media (max-width: 450px) {
+    .books__pdf div{
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .books__img embed{
+      flex-basis: 100%;
+      flex-grow: 1;
+    }
+  }
 
 
 

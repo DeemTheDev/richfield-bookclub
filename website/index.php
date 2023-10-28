@@ -3,34 +3,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Please include this CSS file in all pages.-->
-    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="scripts/main.js" defer></script>
     <title>Home</title>
 </head>
 <body>
-   <header class="header container">
-        <nav>
-            <ul class="header__logo">
-                <li><img class="header__img" src="web-media/logo (2).png" alt="logo"></li>
-            </ul>
-            <ul class="header__menu">
-                <div class="header__dropdown">
-                <li><a class="header__links" href="community.php">COMMUNITY</a></li>
-                <li><a class="header__links" href="login.php">LOG OUT</a></li>
-                <li><a class="header__links" href="admin.php">ADMIN</a></li>
-                </div>
-            
-            <label for="nav" style="color: white;" id="toggle">&#9776;</label>
-            </ul>
+    <header class="header container">
+        <nav class="navbar">
+            <div class="navbar__logo">
+                BOOK CLUB
+            </div>
+            <!-- HAMBURGER MENU -->
+            <a href="#" class="toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <!-- AMBURGER MENU -->
+            <div class="navbar__links">
+                <ul>
+                    <li><a href="">COMMUNITY</a></li>
+                    <li><a href="">ADMIN</a></li>
+                    <li><a href="">LOG-OUT</a></li>
+                </ul>
+            </div>
         </nav>
-   </header>
+    </header>
    <main class="container">
     <section class="current">
-        <div class="curren__book"></div>
-        <div class="current__summary"></div>
-        <div class="current__time"></div>
-        <div class="current__download"></div>
+        <div class="current__book">
+            <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>
+        </div>
+        <div class="current__genre">
+            <h1>Book Name: </h1>
+            <h1>Genre: </h1>
+            <h1>Author: </h1>
+        </div>
+        <div class="current__time">
+            <div class="clock">
+                COUNTDOWN
+            </div>
+        </div>
+        <div class="current__download">
+            <div class="current__button">
+                <button>DOWNLOAD</button>
+            </div>
+        </div>
     </section>
     <section class="books">
         <?php
@@ -69,7 +89,7 @@
         ?>
         
         <div class="books__button">
-            <a href="#"><button class="button">UPLOAD</button></a>
+            <a href="#" class="anchor__button"><button class="button">UPLOAD</button></a>
         </div>
     </section>
    </main>

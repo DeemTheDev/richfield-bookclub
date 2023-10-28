@@ -11,56 +11,103 @@ html{
     margin-left: auto;
     margin-right: auto;
 }
-.header{
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
+/*==========NAVBAR==========*/
+.navbar{
     display: flex;
-    justify-content: flex-end;
-    text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    background-color: #051923;
-
-}
-.header__logo{
-    position: absolute;
-    left: 0;
-    right: 0;
+    justify-content: space-between;
     align-items: center;
+    color: white;
+    font-weight: bold;
+}
+.navbar__logo{
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+.navbar__links ul{
+    display: flex;
+    gap: 1rem;
+}
+.navbar__links li{
     list-style: none;
 }
-.header__img{
-    position: absolute;
-    top: -60px;
-    left: 0;
-    width: 250px;
-    height: 19vh;
-}
-
-.header__menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    gap: 2rem;
-    margin-right: 20px;
-}
-
-.header__links{
+.navbar__links a{
     text-decoration: none;
-    color: #00a6fb;
-    font-size: 20px;
+    color: white;
+    padding: 1.5rem;
     display: block;
 }
-.current{
+.toggle{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.toggle .bar{
+    height: 3px;
     width: 100%;
-    height: 100%;
-    background-color:#003554;
+    background-color: white;
+    border-radius: 10px;
+}
+@media (max-width: 610px){
+    .toggle{
+        display: flex;
+    }
+    .navbar__links{
+        display:none;
+        width: 100%;
+    }
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar__links ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar__links li{
+        text-align: center;
+    }
+    .navbar__links li a{
+        padding: .5rem 1rem;
+    }
+    .navbar__links.active{
+        display: flex;
+    }
 }
 
+/*==========NAVBAR==========*/
+.current{
+    width: 100%;
+    height: 30vh;
+    background-color:#003554;
+    display: flex;
+}
+
+.current__book{
+    width: 25%;
+    height: auto;
+
+}
+.current__genre{
+    width: 25%;
+    height: 30vh;
+}
+.current__time{
+    width: 25%;
+    height: 30vh;
+    margin: 50 50;
+}
+.current__download{
+    width: 25%;
+    height: 30vh;
+}
+.navbar__links li:hover{
+    background-color: #00a6fb;
+}
 
 
 .books{
@@ -69,7 +116,7 @@ html{
     background-color:#006494 ;
 }
 .books__pdf{
-    width: 100%;
+    width: 94%;
     margin-inline: 1.5rem;
     display:grid;
     column-gap: 10px;
@@ -128,115 +175,8 @@ html{
 
 
 
+  
+   
 
-.logo {
-  cursor: pointer;
-  padding: 0 1rem;
-  border-radius: 50%;
-}
 
-nav {
-  flex: 1 1 100%;
-}
-nav ul {
-  list-style: none;
-}
-#mobile-icon,
-[id^="submenu"] {
-  display: none;
-}
-
-nav a:hover,
-nav label:hover {
-  background: #688ed8;
-}
-
-/*------- mobile nav --------*/
-@media (max-width: 767px) {
-  nav ul {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-  #mobile-icon:checked ~ nav > ul {
-    max-height: 100vh;
-  }
-  .nav-items ul {
-    padding-left: 1rem;
-  }
- 
-  .hamburger-icon {
-    width: 18px;
-    height: 3px;
-    background-color: black;
-    display: block;
-    position: relative;
-  }
-  .hamburger-icon:before,
-  .hamburger-icon:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: black;
-    transition: all 0.2s;
-  }
-  .hamburger-icon:before {
-    top: 5px;
-  }
-  .hamburger-icon:after {
-    top: -5px;
-  }
-  #mobile-icon:checked ~ .toggle {
-    border-radius: 50em;
-    transition: all 0.2s ease-out;
-  }
-
-  /* mobile nav change hamburger to x on click */
-  #mobile-icon:checked ~ .toggle .hamburger-icon {
-    background-color: transparent;
-  }
-  #mobile-icon:checked ~ .toggle .hamburger-icon:before {
-    top: 0;
-    transform: rotate(45deg);
-  }
-  #mobile-icon:checked ~ .toggle .hamburger-icon:after {
-    top: 0;
-    transform: rotate(-45deg);
-  }
-  .hide-mobile {
-    display: none;
-  }
-}
-/*-------desktop nav --------*/
-@media (min-width: 768px) {
-  header {
-    flex-wrap: nowrap;
-  }
-  nav,
-  .logo {
-    flex: none;
-  }
-  .toggle,
-  nav label {
-    display: none;
-  }
-  nav ul {
-    display: flex;
-  }
-  nav li {
-    position: relative;
-  }
-  nav ul ul {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-  }
-  li:hover > ul {
-    max-height: 100vh;
-    overflow: visible;
-  }
-
-}
 
