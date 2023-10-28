@@ -107,10 +107,11 @@
                 $con->close();
               
         ?>
-        
-        <div class="books__button">
-            <a href="login.php" class="anchor__button"><button class="button">UPLOAD</button></a>
+
+<div class="books__button">
+            <a href="admin.php" class="anchor__button"><button class="button">UPLOAD</button></a>
         </div>
+            <!---->
     </section>
    </main>
    <footer></footer>
