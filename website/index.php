@@ -135,7 +135,7 @@
                 if ($conn->query($sql) === TRUE) {
                     echo "Book uploaded successfully.";
                 } else {
-                    echo "Error uploading book: " . $conn-> error;
+                    echo "Error uploading book: " . $conn-> $error;
                 }
             } else {
                 echo "Error uploading book.";
