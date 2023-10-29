@@ -67,7 +67,7 @@
                         $bookName = $row["name_book"];
                         $bookAuthor = $row["author_book"];
                         $bookPath = $row["book_path"];
-        
+        //Check this code
                         echo "<div class='books__pdf'>
                                 <div class='books__img item1'>
                                     <embed src='$bookPath' height='90%' width='100%'>
