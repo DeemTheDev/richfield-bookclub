@@ -1,6 +1,5 @@
 <?php
-session_start();
-$con = new mysqli("localhost", "root", "", "book_club");
+include('connection_database.php');
 
 // if (mysqli_connect_error()) {
 //     echo "Connection failed: " . mysqli_connect_errno();
@@ -47,17 +46,17 @@ mysqli_close($con);
 <body>
 
 <div class="navbar">
-<img class="MainLogo"src="Book_Club_tps.png"  /><!--Image which has transparent background-->
+<img class="MainLogo"src="web-media/Book_Club_tps.png"  /><!--Image which has transparent background-->
   <ul>
     
   </ul>
   <ul>
-  <li><a href="#">Home</a></li>
-    <li><a href="#">Admin</a></li>
+  <li><a href="#"></a></li>
+    <li><a href="#"></a></li>
 	
   </ul>
 </div>
-<img class="MainLogo"src="Book_Club_tps.png"  /><!--Image which has transparent to make the background not see through-->
+<img class="MainLogo"src="web-media/Book_Club_tps.png"  /><!--Image which has transparent to make the background not see through-->
 
    <div class="wrapper"> 
     <?php if (isset($error)) { ?>
