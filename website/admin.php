@@ -1,4 +1,99 @@
-<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+  <title>Admin</title>
+  <style>
+    nav ul{
+      display: flex;
+    }
+    ul{
+      gap: 1rem;
+      list-style: none;
+    }
+    li{
+      font-weight: bold;
+    }
+    table{
+      border: 1px;
+    }
+    .books{
+      position: absolute;
+      top: 10vh;
+      left: 0;
+    }
+    .books table{
+      width: 50%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li href="index.php">HOME</li>
+      <li href="community.php">COMMUNITY</li>
+      <li href="logout.php"><a href="">LOG OUT</a></li>
+    </ul>
+  </nav>
+
+
+
+  <?php
+    include("database/connection_database.php");
+    $fetch = mysqli_query($con, "SELECT * FROM books");
+   $row = mysqli_fetch_row($fetch);
+   if($row > 0){
+    while($r = mysqli_fetch_array($fetch)){
+
+   }
+   }
+  ?>
+  <div class="books">
+    <div class="saved__books">
+      <table>
+        <thead>
+          <td>BOOK NAME</td>
+          <td>DELETE</td>
+          <td>CHOOSE</td>
+          <td>START TIME</td>
+          <td>END TIME</td>
+        </thead>
+          <tr>
+            <td><?php echo $r['book'];?></td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Book Club</title>
@@ -145,4 +240,4 @@
     }
   </script>
 </body>
-</html>
+</html> -->
