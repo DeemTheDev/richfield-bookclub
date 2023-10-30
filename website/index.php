@@ -24,8 +24,8 @@
             <!-- AMBURGER MENU -->
             <div class="navbar__links">
                 <ul>
-                    <li><a href="">COMMUNITY</a></li>
-                    <li><a href="">ADMIN</a></li>
+                    <li><a href="community.php">COMMUNITY</a></li>
+                    <li><a href="admin.php">ADMIN</a></li>
                     <li><a href="">LOG-OUT</a></li>
                 </ul>
             </div>
@@ -55,11 +55,11 @@
     <section class="books">
     <?php
         include('database/connection_database.php');
-        
+
         // Query to retrieve books from the database
         $sql = "SELECT * FROM books";
         $result = $con->query($sql);
-        
+
         // Process the query result
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -67,44 +67,58 @@
                 $bookName = $row["name_book"];
                 $bookAuthor = $row["author_book"];
                 $bookPath = $row["book_path"];
-                echo "<div class='books__pdf'>
-                         <div class='books__img item1'>
-                            <embed src='$bookPath' height='90%' width='100%'>
+                for ($x = 1; $x <= 4; $x++) {
+                    echo "
+                    <div class='books__pdf'>
+                        <div class='books__img item{$x}'>
+                            <embed src='$bookPath' height='90%' width='100%''>
                             <div class='books__buttons'>
                                 <div class='books__download'><a href='$bookPath'><button>DOWNLOAD</button></a></div>
                                 <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
                             </div>
                         </div>
-                        <div class='books__img item2'>
-                            <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>
-                                <div class='books__buttons'>
-                                        <div class='books__download'><a href='books/Atomic-Habits-old.pdf'><button>DOWNLOAD</button></a></div>
-                                        <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
-                                    </div>
-                        </div>
-                            <div class='books__img item3'>
-                                <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>
-                                <div class='books__buttons'>
-                                    <div class='books__download'><a href='books/Atomic-Habits-old.pdf'><button>DOWNLOAD</button></a></div>
-                                    <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
-                                </div>
-                            </div>
-                        <div class='books__img item4'>
-                            <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>
-                                <div class='books__buttons'>
-                                    <div class='books__download'><a href='books/Atomic-Habits-old.pdf'><button>DOWNLOAD</button></a></div>
-                                    <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
-                                </div>
-                            </div>
-                        </div>";
-                    }
-                } else {
-                    echo "No books found.";
+                    </div>
+                ";
                 }
-        
-                $con->close();
-              
+            }
+            
+        }else{
+            echo "No books found.";
+            $con->close();
+        }
+
         ?>
+                        <!-- <div class='books__img item1'>
+                             <embed src='$bookPath' height='90%' width='100%'>
+                                 <div class='books__buttons'>
+                                         <div class='books__download'><a href='$bookPath'><button>DOWNLOAD</button></a></div>
+                                         <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
+                                     </div>
+                         </div>
+                         <div class='books__img item2'>
+                             <embed src='$bookPath' height='90%' width='100%'>
+                                 <div class='books__buttons'>
+                                         <div class='books__download'><a href='$bookPath'><button>DOWNLOAD</button></a></div>
+                                         <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
+                                     </div>
+                         </div>
+                             <div class='books__img item3'>
+                                 <embed src='$bookPath' height='90%' width='100%'>
+                                 <div class='books__buttons'>
+                                     <div class='books__download'><a href='$bookPath'><button>DOWNLOAD</button></a></div>
+                                     <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
+                                 </div>
+                             </div>
+                         <div class='books__img item4'>
+                             <embed src='$bookPath' height='90%' width='100%'>
+                                 <div class='books__buttons'>
+                                     <div class='books__download'><a href='$bookPath'><button>DOWNLOAD</button></a></div>
+                                     <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
+                                 </div>
+                             </div>
+                         </div>";
+                     -->
+
 
         <div class="books__button">
             <a href="admin.php" class="anchor__button"><button class="button">UPLOAD</button></a>
@@ -116,7 +130,7 @@
             <!--The Upload button code that was on admin-->
             <?php
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        include('connection_database.php');
+        include('database/connection_database.php');
 
         // Handle file upload
         $targetDirectory = "books/";
@@ -131,10 +145,10 @@
                 // Insert book details into the database
                 $sql = "INSERT INTO books (name_book, author_book, book_path) VALUES ('$bookName', '$authorName', '$targetFile')";
 
-                if ($conn->query($sql) === TRUE) {
+                if ($con->query($sql) === TRUE) {
                     echo "Book uploaded successfully.";
                 } else {
-                    echo "Error uploading book: " . $conn-> $error;
+                    echo "Error uploading book: " . $con-> $error;
                 }
             } else {
                 echo "Error uploading book.";
@@ -143,7 +157,7 @@
             echo "No file selected or file upload error.";
         }
 
-        $conn->close();
+        $con->close();
     }
 ?>
 
