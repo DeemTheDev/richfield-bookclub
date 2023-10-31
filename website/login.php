@@ -6,9 +6,10 @@ if (mysqli_connect_error()) {
     exit();
 }
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $studentNumber = $_POST["studentNumber"];
-    $password = $_POST["password"];
+    $password1 = $_POST["password1"];
 
     // Check if the student number and password match the default password
     if ($password === "R1chField@2023") {
@@ -23,12 +24,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     } else{
-        
-        // Redirect the user to Book_Club_books.php
-        echo "<script> alert('Student Number does not exist!');</script>";
-        
+                 // Check if the student number and password match in the database
+        $query = "SELECT * FROM login WHERE student_number = '$studentNumber' AND password = '$password'";
+        $result = mysqli_query($con, $query);
+            // Redirect to index.php
+            header("Location: index.php");
+            exit();
+    
     }
 }
+
 
 mysqli_close($con);
 ?>
@@ -73,7 +78,7 @@ mysqli_close($con);
 		</div>
 		
         <div class="input-box">
-        <input type="password" id="password" name="password" placeholder ="Password" required>
+        <input type="password" id="password" name="password1" placeholder ="Password" required>
 		<i class='bx bx-lock' ></i>
 		</div>
 		
