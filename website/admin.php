@@ -5,32 +5,51 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
   <title>Admin</title>
   <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
     nav ul{
       display: flex;
+      position: absolute;
+      top: 0;
+      right: 1rem;
     }
     ul{
       gap: 1rem;
       list-style: none;
     }
+    li:hover{
+      background-color: aqua;
+    }
     li{
+      padding: .5rem;
       font-weight: bold;
+    }
+    h1{
+      position: absolute;
+      top: 0;
+      left: 1rem;
     }
     table{
       border: 1px;
     }
     .books{
       position: absolute;
-      top: 10vh;
-      left: 0;
+      top: 7rem;
     }
-    .books table{
-      width: 50%;
-      height: auto;
+    .add{
+      position: fixed;
+      top: 7rem;
+      left: 1rem;
     }
   </style>
 </head>
 <body>
   <nav>
+    
+      <h1>LOGO</h1>
+    
     <ul>
       <li href="index.php">HOME</li>
       <li href="community.php">COMMUNITY</li>
@@ -38,34 +57,91 @@
     </ul>
   </nav>
 
+    <main>
+      <section class="add">
+      <?php
+include "database/connection_database.php";
 
+if (mysqli_connect_error()) {
+    echo "ERROR connecting to the database: " . mysqli_connect_errno();
+}
 
-  <?php
-    include("database/connection_database.php");
-    $fetch = mysqli_query($con, "SELECT * FROM books");
-   $row = mysqli_fetch_row($fetch);
-   if($row > 0){
-    while($r = mysqli_fetch_array($fetch)){
+// BACKEND TO ADD STUDENTS..
+if (isset($_POST['add'])) {
+    $studentNumber = $_POST['studentNumber'];
 
-   }
-   }
-  ?>
-  <div class="books">
-    <div class="saved__books">
-      <table>
-        <thead>
-          <td>BOOK NAME</td>
-          <td>DELETE</td>
-          <td>CHOOSE</td>
-          <td>START TIME</td>
-          <td>END TIME</td>
-        </thead>
-          <tr>
-            <td><?php echo $r['book'];?></td>
-          </tr>
-      </table>
+    // Start a new transaction.
+    mysqli_begin_transaction($con);
+
+    // Insert the new student into the database.
+    $sql = mysqli_query($con, "INSERT INTO login WHERE student_number VALUES ('$studentNumber')");
+
+    // Check for duplicate student numbers after inserting the new student.
+    $result = mysqli_query($con, "SELECT * FROM login WHERE student_number = '$studentNumber'");
+
+    if (mysqli_num_rows($result) > 1) {
+        // Delete the new student record from the database.
+        $sql = mysqli_query($con, "DELETE FROM login WHERE student_number = '$studentNumber'");
+    }
+
+    // Commit the transaction.
+    mysqli_commit($con);
+
+    // Display a message to the user.
+    if ($sql) {
+        $message = "Successfully added student.";
+    } else {
+        $message = "Error adding student: " . mysqli_error($con);
+    }
+}
+?>
+
+        <div class="add__student">
+          <form action="admin.php" method="post">
+            <label><?php echo $message;?></label>
+            <br>
+            <label for="studentNumber">Add student:</label>
+            <input type="text" name="studentNumber">
+            <input type="submit" value="Add" name="add">
+            <br>
+            <label for="removeNumber">Add student:</label>
+            <input type="text" name="removeNumber">
+            <input type="submit" value="Delete" name="delete">
+          </form>
+        </div>
+      </section>
+    
+    <section class="books">
+    <?php
+    // include("database/connection_database.php");
+    // $fetch = mysqli_query($con, "SELECT * FROM books");
+    // $row = mysqli_fetch_row($fetch);
+    // if($row > 0){
+    // while($r = mysqli_fetch_array($fetch)){
+
+    // }
+    // }
+    ?>
+    <div class="books__container">
+      <div class="saved__books">
+        <table>
+          <thead>
+            <td>BOOK NAME</td>
+            <td>DELETE</td>
+            <td>CHOOSE</td>
+            <td>START TIME</td>
+            <td>END TIME</td>
+          </thead>
+            <tr>
+              <td><?php //echo $r['book'];?></td>
+            </tr>
+        </table>
+      </div>
     </div>
-  </div>
+      </section>
+    </main>
+
+  
 </body>
 </html>
 

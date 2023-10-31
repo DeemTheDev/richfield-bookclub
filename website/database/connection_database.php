@@ -1,5 +1,5 @@
 <?php
              
-             $con = new mysqli("localhost", "root", "", "book_club");
+$con = mysqli_connect("localhost", "root", "", "book_club");
 
-             ?>
+?>

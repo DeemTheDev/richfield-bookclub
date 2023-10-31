@@ -1,10 +1,10 @@
 <?php
-include('connection_database.php');
+include('database/connection_database.php');
 
-// if (mysqli_connect_error()) {
-//     echo "Connection failed: " . mysqli_connect_errno();
-//     exit();
-// }
+if (mysqli_connect_error()) {
+    echo "Connection failed: " . mysqli_connect_errno();
+    exit();
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $studentNumber = $_POST["studentNumber"];
@@ -22,10 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: update-credentials.php");
             exit();
         }
-    } else {
+    } else{
+        
         // Redirect the user to Book_Club_books.php
-        header("Location: index.php");
-        exit();
+        echo "<script> alert('Student Number does not exist!');</script>";
+        
     }
 }
 
@@ -41,6 +42,7 @@ mysqli_close($con);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/login.css">	
 </head>
 <body>
@@ -63,14 +65,14 @@ mysqli_close($con);
         <p><?php echo $error; ?></p>
     <?php } ?>
 	
-    <form method="POST" enctype="multipart/form-data">
+    <form action="login.php" method="POST" enctype="multipart/form-data">
 	           
         <div class="input-box">
         <input type="text" id="studentNumber" name="studentNumber" placeholder ="Student Number" required>
 		<i class='bx bxs-user'></i>
 		</div>
 		
-       <div class="input-box">
+        <div class="input-box">
         <input type="password" id="password" name="password" placeholder ="Password" required>
 		<i class='bx bx-lock' ></i>
 		</div>
@@ -79,7 +81,8 @@ mysqli_close($con);
         <label><input type="checkbox"  required>Remember me</label>
 		</div>
 		
-        <button type="submit" class="btn">Login</button>
+        <input type="submit" value="Login" class="btn" name="login">
+        
 		
 		
 		<div class ="register-link">
