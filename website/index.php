@@ -13,7 +13,7 @@
 <header class="header container">
         <nav class="navbar">
             <div class="navbar__logo">
-                BOOK CLUB
+            <img class="MainLogo"src="web-media/White_BC_transparent.png"  />
             </div>
             <!-- HAMBURGER MENU -->
             <a href="#" class="toggle">

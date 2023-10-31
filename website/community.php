@@ -42,6 +42,7 @@
 
 
 <body>
+    
     <div class="chat-container">
         <div id="chat-messages"></div>
         <form id="message-form">
