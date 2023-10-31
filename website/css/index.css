@@ -211,19 +211,32 @@ html{
     height: auto;
     background-color:#006494 ;
 }
-.books__pdf{
-    width: 94%;
+.books__pdf-wrapper{
+    margin-left: -1rem;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.books__pdf {
+    height: 90%;
+    width: 93%;
+    margin-inline: 1.5rem;
+    gap: 1rem;
+  }
+/* .books__pdf{
+    width: 100%;
     margin-inline: 1.5rem;
     display:grid;
-    column-gap: 10px;
-    grid-template-columns: 25%, 25%, 25%, 25% ; 
+    grid-template-columns: 25%, 25%, 25%, 25%;
+    margin-left: .5rem;;
+    gap: 1rem;
     
-}
+    
+} */
 
 
 .books__img embed{
     width: 100%;
-    height: 30vh;
+    height: 29vh;
     background-color: #00a6fb;
     margin-top: 1.5rem;
     

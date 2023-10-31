@@ -141,4 +141,38 @@
 
 
     DB CONNECTION 
+    <?php
+        for($i = 1; $i <= 4; $i++){
+            echo "<div class='books__pdf'>
+                    <div class='books__img item1'>
+                        <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>
+                        <div class='books__buttons'>
+                            <div class='books__download'><a href='books/Atomic-Habits-old.pdf'><button>DOWNLOAD</button></a></div>
+                            <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
+                        </div>
+                    </div>
+                    <div class='books__img item2'>
+                        <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>
+                        <div class='books__buttons'>
+                            <div class='books__download'><a href='books/Atomic-Habits-old.pdf'><button>DOWNLOAD</button></a></div>
+                            <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
+                        </div>
+                    </div>
+                    <div class='books__img item3'>
+                        <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>
+                        <div class='books__buttons'>
+                            <div class='books__download'><a href='books/Atomic-Habits-old.pdf'><button>DOWNLOAD</button></a></div>
+                            <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
+                        </div>
+                    </div>
+                    <div class='books__img item4'>
+                        <embed src='books/Atomic-Habits-old.pdf' height='90%' width='100%'>
+                        <div class='books__buttons'>
+                            <div class='books__download'><a href='books/Atomic-Habits-old.pdf'><button>DOWNLOAD</button></a></div>
+                            <div class='books__vote'><span>VOTE: <input type='checkbox' name='vote'></span></div>
+                        </div>
+                    </div>
+                  </div>";
+    }
+    ?>  
     

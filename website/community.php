@@ -28,7 +28,7 @@
             <!-- AMBURGER MENU -->
             <div class="navbar__links">
                 <ul>
-                    <li><a href="community.php">COMMUNITY</a></li>
+                    <li><a href="index.php">HOME</a></li>
                     <li><a href="admin.php">ADMIN</a></li>
                     <li><a href="login.php">LOG-OUT</a></li>
                 </ul>
