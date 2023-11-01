@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = "SELECT * FROM login WHERE student_number = '$studentNumber' AND password = '$password'";
         $result = mysqli_query($con, $query);
             // Redirect to index.php
-            header("Location: index.php");
+            header("Location: update-credentials.php");
             exit();
     
     }

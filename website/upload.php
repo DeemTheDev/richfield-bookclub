@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
     <title>Document</title>
     <style>
+      body{
+        background: rgb(63,94,251);
+        background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,252,203,1) 100%);
+      }
     nav ul{
       display: flex;
     }
@@ -27,16 +31,64 @@
       width: 50%;
       height: auto;
     }
+    .MainLogo{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    }
+    .modal{
+      position: absolute;
+      top: 15rem;
+      left: 40rem;
+    }
+    .navbar__links{
+      position: absolute;
+      top: 5rem;
+      left: 20rem;
+    }
+    .navbar__links a{
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+    }
+    .form-heading{
+      font-size: 2.3rem;
+      
+    }
+    form label{
+      font-size: 1.5rem;
+      color: white;
+    }
+    .btn{
+      font-size: 2rem;
+      
+    }
   </style>
+  <header class="header container">
+        <nav class="navbar">
+            <div class="navbar__logo">
+            <img class="MainLogo"src="web-media/Book_Club_tps.png"  />
+            </div>
+            <!-- HAMBURGER MENU -->
+            <a href="#" class="toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <!-- AMBURGER MENU -->
+            <div class="navbar__links">
+                <ul>
+                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="admin.php">ADMIN</a></li>
+                    <li><a href="login.php">LOG-OUT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 </head>
 <body>
-<nav>
-    <ul>
-      <li href="index.php">HOME</li>
-      <li href="community.php">COMMUNITY</li>
-      <li href="logout.php"><a href="">LOG OUT</a></li>
-    </ul>
-  </nav>
 <?php
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         include('database/connection_database.php');
@@ -73,16 +125,16 @@
 
 <div id="uploadModal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close"></span>
         <form action="upload.php" method="POST" enctype="multipart/form-data">
-            <h2>Upload Book</h2>
+            <h2 class="form-heading">Upload Book</h2>
             <label for="bookName">Book Name:</label>
             <input type="text" id="bookName" name="bookName" required>
             <label for="authorName">Author Name:</label>
             <input type="text" id="authorName" name="authorName" required>
             <label for="bookFile">Upload Book File:</label>
             <input type="file" id="bookFile" name="bookFile" required>
-            <input type="submit" value="Upload">
+            <input type="submit" value="Upload" class="btn">
         </form>
     </div>
 </div>

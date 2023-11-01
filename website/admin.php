@@ -5,10 +5,36 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
   <title>Admin</title>
   <style>
+    body{
+      background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(51,21,194,1) 100%); 
+    }
     ul{
       display: flex;
       gap: 1rem;
       list-style: none;
+      position: absolute;
+      top: 1.5rem;
+      right: 7rem;
+    }
+    li a{
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav h1{
+      color: white;
+    }
+    label{
+      color: white;
+      font-weight: bold;
+    }
+    thead td{
+      color: white;
+      font-weight: bold;
+    }
+    .r1 td{
+      color: white;
     }
   </style>
 </head>
@@ -18,9 +44,9 @@
     <h1>ADMINISTRATOR</h1>
     
     <ul>
-      <li><a href="index.php">HOME</a></li>
-      <li><a href="community.php">COMMUNITY</a></li>
-      <li><a href="#">LOG OUT</a></li>
+    <li><a href="index.php">HOME</a></li>
+    <li><a href="community.php">COMMUNITY</a></li>
+    <li><a href="#">LOG OUT</a></li>
     </ul>
     </nav>
 
@@ -71,7 +97,7 @@
             <input type="text" name="studentNumber">
             <input type="submit" value="Add" name="add">
             <br>
-            <label for="removeNumber">Add student:</label>
+            <label for="removeNumber">Remove student:</label>
             <input type="text" name="removeNumber">
             <input type="submit" value="Delete" name="delete">
           </form>
@@ -100,7 +126,7 @@
     <td>END TIME</td>
   </thead>
   <tbody>
-    <tr>
+    <tr class="r1">
       <td>The Lord of the Rings</td>
       <td><a href="#">Delete</a></td>
       <td><a href="#">Choose</a></td>
@@ -114,7 +140,7 @@
       <td>2023-11-01T07:52:59Z</td>
       <td>2023-11-01T08:52:59Z</td>
     </tr>
-    <tr>
+    <tr class="r1">
       <td>The Hitchhiker's Guide to the Galaxy</td>
       <td><a href="#">Delete</a></td>
       <td><a href="#">Choose</a></td>
@@ -128,7 +154,7 @@
       <td>2023-11-01T11:52:59Z</td>
       <td>2023-11-01T12:52:59Z</td>
     </tr>
-    <tr>
+    <tr class="r1">
       <td>To Kill a Mockingbird</td>
       <td><a href="#">Delete</a></td>
       <td><a href="#">Choose</a></td>
