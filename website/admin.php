@@ -5,100 +5,67 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
   <title>Admin</title>
   <style>
-    *{
-      margin: 0;
-      padding: 0;
-    }
-    nav ul{
-      display: flex;
-      position: absolute;
-      top: 0;
-      right: 1rem;
-    }
     ul{
+      display: flex;
       gap: 1rem;
       list-style: none;
-    }
-    li:hover{
-      background-color: aqua;
-    }
-    li{
-      padding: .5rem;
-      font-weight: bold;
-    }
-    h1{
-      position: absolute;
-      top: 0;
-      left: 1rem;
-    }
-    table{
-      border: 1px;
-    }
-    .books{
-      position: absolute;
-      top: 7rem;
-    }
-    .add{
-      position: fixed;
-      top: 7rem;
-      left: 1rem;
     }
   </style>
 </head>
 <body>
   <nav>
     
-      <h1>LOGO</h1>
+    <h1>ADMINISTRATOR</h1>
     
     <ul>
-      <li href="index.php">HOME</li>
-      <li href="community.php">COMMUNITY</li>
-      <li href="logout.php"><a href="">LOG OUT</a></li>
+      <li><a href="index.php">HOME</a></li>
+      <li><a href="community.php">COMMUNITY</a></li>
+      <li><a href="#">LOG OUT</a></li>
     </ul>
-  </nav>
+    </nav>
 
     <main>
       <section class="add">
       <?php
-include "database/connection_database.php";
+// include "database/connection_database.php";
 
-if (mysqli_connect_error()) {
-    echo "ERROR connecting to the database: " . mysqli_connect_errno();
-}
+// if (mysqli_connect_error()) {
+//     echo "ERROR connecting to the database: " . mysqli_connect_errno();
+// }
 
-// BACKEND TO ADD STUDENTS..
-if (isset($_POST['add'])) {
-    $studentNumber = $_POST['studentNumber'];
+// // BACKEND TO ADD STUDENTS..
+// if (isset($_POST['add'])) {
+//     $studentNumber = $_POST['studentNumber'];
 
-    // Start a new transaction.
-    mysqli_begin_transaction($con);
+//     // Start a new transaction.
+//     mysqli_begin_transaction($con);
 
-    // Insert the new student into the database.
-    $sql = mysqli_query($con, "INSERT INTO login WHERE student_number VALUES ('$studentNumber')");
+//     // Insert the new student into the database.
+//     $sql = mysqli_query($con, "INSERT INTO login WHERE student_number VALUES ('$studentNumber')");
 
-    // Check for duplicate student numbers after inserting the new student.
-    $result = mysqli_query($con, "SELECT * FROM login WHERE student_number = '$studentNumber'");
+//     // Check for duplicate student numbers after inserting the new student.
+//     $result = mysqli_query($con, "SELECT * FROM login WHERE student_number = '$studentNumber'");
 
-    if (mysqli_num_rows($result) > 1) {
-        // Delete the new student record from the database.
-        $sql = mysqli_query($con, "DELETE FROM login WHERE student_number = '$studentNumber'");
-    }
+//     if (mysqli_num_rows($result) > 1) {
+//         // Delete the new student record from the database.
+//         $sql = mysqli_query($con, "DELETE FROM login WHERE student_number = '$studentNumber'");
+//     }
 
-    // Commit the transaction.
-    mysqli_commit($con);
+//     // Commit the transaction.
+//     mysqli_commit($con);
 
-    // Display a message to the user.
-    if ($sql) {
-        $message = "Successfully added student.";
-    } else {
-        $message = "Error adding student: " . mysqli_error($con);
-    }
-}
+//     // Display a message to the user.
+//     if ($sql) {
+//         $message = "Successfully added student.";
+//     } else {
+//         $message = "Error adding student: " . mysqli_error($con);
+//     }
+// }
 ?>
 
         <div class="add__student">
           <form action="admin.php" method="post">
-            <label><?php echo $message;?></label>
+            <label><?php //echo $message;?></label>
             <br>
             <label for="studentNumber">Add student:</label>
             <input type="text" name="studentNumber">
@@ -124,18 +91,52 @@ if (isset($_POST['add'])) {
     ?>
     <div class="books__container">
       <div class="saved__books">
-        <table>
-          <thead>
-            <td>BOOK NAME</td>
-            <td>DELETE</td>
-            <td>CHOOSE</td>
-            <td>START TIME</td>
-            <td>END TIME</td>
-          </thead>
-            <tr>
-              <td><?php //echo $r['book'];?></td>
-            </tr>
-        </table>
+      <table>
+  <thead>
+    <td>BOOK NAME</td>
+    <td>DELETE</td>
+    <td>CHOOSE</td>
+    <td>START TIME</td>
+    <td>END TIME</td>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The Lord of the Rings</td>
+      <td><a href="#">Delete</a></td>
+      <td><a href="#">Choose</a></td>
+      <td>2023-11-01T05:52:59Z</td>
+      <td>2023-11-01T06:52:59Z</td>
+    </tr>
+    <tr>
+      <td>Harry Potter and the Sorcerer's Stone</td>
+      <td><a href="#">Delete</a></td>
+      <td><a href="#">Choose</a></td>
+      <td>2023-11-01T07:52:59Z</td>
+      <td>2023-11-01T08:52:59Z</td>
+    </tr>
+    <tr>
+      <td>The Hitchhiker's Guide to the Galaxy</td>
+      <td><a href="#">Delete</a></td>
+      <td><a href="#">Choose</a></td>
+      <td>2023-11-01T09:52:59Z</td>
+      <td>2023-11-01T10:52:59Z</td>
+    </tr>
+    <tr>
+      <td>Pride and Prejudice</td>
+      <td><a href="#">Delete</a></td>
+      <td><a href="#">Choose</a></td>
+      <td>2023-11-01T11:52:59Z</td>
+      <td>2023-11-01T12:52:59Z</td>
+    </tr>
+    <tr>
+      <td>To Kill a Mockingbird</td>
+      <td><a href="#">Delete</a></td>
+      <td><a href="#">Choose</a></td>
+      <td>2023-11-01T13:52:59Z</td>
+      <td>2023-11-01T14:52:59Z</td>
+    </tr>
+  </tbody>
+</table>
       </div>
     </div>
       </section>
