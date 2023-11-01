@@ -51,7 +51,26 @@
             <button type="submit">Send</button>
         </form>
     </div>
-
+    <div class="area" >
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+				 <li></li>
+				  <li></li>
+				   <li></li> 
+				    <li></li>
+					 <li></li>
+            </ul>
+        </div >
+</body>
     <script>
         // Save message to local storage and update chat box
         function saveMessage(username, message) {
